@@ -1,0 +1,738 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Variables de couleurs */
+:root {
+    --primary: #e74c3c;
+    --secondary: #2c3e50;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --success: #27ae60;
+    --light-gray: #e2e8f0;
+    --white: #ffffff;
+    --primary-color: #e74c3c;  /* Même couleur que --primary */
+    --dark-blue: #2c3e50;
+}
+
+/* Styles généraux */
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-blue);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*time*/
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: var(--dark); /* Couleur du texte */
+    background-color: transparent; /* Supprime le fond clair */
+}
+
+.current-time {
+    font-weight: bold;
+    color: var(--white); /* Couleur principale */
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo span:first-child {
+    color: var(--white);
+}
+
+.logo span:last-child {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url(images/lavage_auto.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Services Section */
+.service-details {
+    padding: 80px 0;
+}
+
+.service-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.service-intro p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Formules de lavage */
+.formules {
+    padding: 40px 0;
+    background-color: var(--light-gray);
+}
+
+.formules h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--dark-blue);
+}
+
+.formule-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.formule-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formule-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.formule-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.formule-content {
+    padding: 20px;
+}
+
+.formule-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.formule-content ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.formule-content ul li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.formule-content ul li::before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #c62828;
+}
+
+/* Processus de lavage */
+.process {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.process h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--dark-blue);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.step {
+    width: 250px;
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--dark-blue);
+}
+
+/* Témoignages */
+.testimonials {
+    background-color: var(--light-gray);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--dark-blue);
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-text::before {
+    content: "";
+    font-size: 60px;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: -15px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.client-name {
+    text-align: left;
+}
+
+.client-name h4 {
+    margin-bottom: 5px;
+}
+
+.client-name p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* CTA Section */
+.cta {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-bottom: 70px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+}
+
+.faq-item.active .faq-question::after {
+    content: "−";
+}
+
+.faq-answer {
+    display:none;
+    padding: 0 20px 20px;
+    color: #6b7280;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+}
+
+.social-links li {
+    margin-right: 15px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #3a4b5c;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-column {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .formule-card {
+        width: 100%;
+    }
+
+    .testimonial-card {
+        width: 100%;
+    }
+}
+/* Style pour le dropdown utilisateur */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.user-icon.connected {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.user-icon.disconnected {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.user-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Augmenté pour s'assurer qu'il apparaît au-dessus des autres éléments */
+    border-radius: 4px;
+    overflow: hidden;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Affiche le menu déroulant uniquement au survol */
+.user-dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+.produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.produit-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.produit-card:hover {
+    transform: translateY(-5px);
+}
+
+.produit-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.produit-info {
+    padding: 15px;
+}
+
+.produit-info h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.produit-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 0 0 10px;
+}
+
+.produit-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prix, .prix-promo {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.prix-ancien {
+    font-size: 14px;
+    color: #777;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.produit-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--success);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-ajouter {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-ajouter:hover {
+    background: var(--primary-dark);
+}

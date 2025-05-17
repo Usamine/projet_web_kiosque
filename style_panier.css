@@ -1,0 +1,448 @@
+/* Variables globales */
+:root {
+    --primary: #e74c3c;
+    --secondary: #2c3e50;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --success: #27ae60;
+    --light-gray: #e2e8f0;
+    --white: #ffffff;
+    --primary-color: #e74c3c;
+    --dark-blue: #2c3e50;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* Style pour le dropdown utilisateur */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.user-icon.connected {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.user-icon.disconnected {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.user-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Augmenté pour s'assurer qu'il apparaît au-dessus des autres éléments */
+    border-radius: 4px;
+    overflow: hidden;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Affiche le menu déroulant uniquement au survol */
+.user-dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+.logo {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Panier Section */
+#authSection {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#authSection h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#emptyMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-top: 2rem;
+}
+
+#cartSection {
+    margin-top: 2rem;
+}
+
+#cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+#cartTable th, #cartTable td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+#cartTable th {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+#cartTable td {
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+#total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+button#clearCart {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#clearCart:hover {
+    background-color: #c62828;
+}
+
+a#payButton {
+    display: inline-block;
+    background-color: var(--success);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+a#payButton:hover {
+    background-color: #1e7e34;
+}
+
+/* Footer (identique à la page lavage) */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+}
+
+.social-links li {
+    margin-right: 15px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #3a4b5c;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-column {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categorie-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+/* Style pour le dropdown utilisateur */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.user-icon.connected {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.user-icon.disconnected {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.user-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Augmenté pour s'assurer qu'il apparaît au-dessus des autres éléments */
+    border-radius: 4px;
+    overflow: hidden;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Affiche le menu déroulant uniquement au survol */
+.user-dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}

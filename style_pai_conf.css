@@ -1,0 +1,140 @@
+/* Variables globales */
+:root {
+    --primary-color: #e74c3c; /* Rouge principal */
+    --dark-blue: #2c3e50; /* Bleu foncé */
+    --light-gray: #f9f9f9; /* Gris clair */
+    --white: #ffffff; /* Blanc */
+    --dark: #34495e; /* Gris foncé */
+    --success: #27ae60; /* Vert pour succès */
+}
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.current-time {
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Confirmation Section */
+#confirmationSection {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+    flex-grow: 1; /* Permet au contenu de s'étendre */
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 2rem;
+}
+
+#confirmationSection p {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+#confirmationSection .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#confirmationSection .btn:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Positionne le footer en bas */
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}

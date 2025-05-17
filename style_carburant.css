@@ -1,0 +1,925 @@
+/* Reset et variables communes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary: #e74c3c;
+    --secondary: #2c3e50;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --success: #27ae60;
+    --light-gray: #e2e8f0;
+    --white: #ffffff;
+    --primary-color: #e74c3c;  /* Même couleur que --primary */
+    --dark-blue: #2c3e50;
+    --gray: #777;              /* Ajouté pour cohérence */
+    --text-light: #777;        /* Ajouté pour cohérence */
+    --primary-dark: #c62828;   /* Ajouté pour hover */
+    --red: #e74c3c;            /* Remplacement pour variation */
+    --green: #27ae60;          /* Remplacement pour variation */
+    --blue: #3498db;           /* Remplacement pour variation */
+}
+
+body {
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header (identique aux autres pages) */
+header {
+    background-color: var(--dark-blue);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: var(--dark);
+    background-color: transparent;
+}
+
+.current-time {
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo span:first-child {
+    color: var(--white);
+}
+
+.logo span:last-child {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url(images/carburant.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Section Introduction */
+.section-intro {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.section-intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.section-intro p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--gray);
+}
+
+/* Catégories (ajouté pour cohérence) */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.categorie-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.categorie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.categorie-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 28px;
+}
+
+.categorie-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.categorie-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* Types de carburant */
+.types-carburant {
+    padding: 60px 0;
+    background-color: var(--light-gray);
+}
+
+.carburant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.carburant-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.carburant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carburant-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.carburant-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.carburant-card p {
+    margin-bottom: 20px;
+    color: var(--gray);
+}
+
+.prix-jour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prix {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.variation {
+    font-size: 14px;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.up {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--red);
+}
+
+.down {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--green);
+}
+
+.stable {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--blue);
+}
+
+/* Produits Grid */
+.produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.produit-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.produit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.produit-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--success);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.produit-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.produit-info {
+    padding: 20px;
+}
+
+.produit-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.produit-desc {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.produit-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prix, .prix-promo {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.prix-promo {
+    color: var(--primary-color);
+}
+
+.prix-ancien {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.btn-ajouter {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.btn-ajouter:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Avantages carburant */
+.avantages-carburant {
+    padding: 80px 0;
+}
+
+.avantages-carburant h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--dark-blue);
+}
+
+.avantages-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.avantage-item {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.avantage-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.avantage-content h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.avantage-content p {
+    color: var(--gray);
+}
+
+/* Avantages (ajouté pour cohérence) */
+.avantages {
+    padding: 80px 0;
+}
+
+.avantages h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--dark-blue);
+}
+
+.avantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.avantage-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.avantage-item i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.avantage-item h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.avantage-item p {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+/* Carte des stations */
+.carte-stations {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.map-container {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.map-placeholder {
+    height: 400px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray);
+    border-radius: 8px;
+}
+
+.map-placeholder i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.search-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 10;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-box button {
+    border-radius: 0 5px 5px 0;
+    padding: 0 20px;
+}
+
+.stations-list h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.station-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.station-info h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.station-info p {
+    margin-bottom: 5px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+}
+
+.station-info i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.station-distance {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.station-distance p {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* FAQ */
+.faq {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--dark-blue);
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.faq-item.active .faq-question::after {
+    content: "−";
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px;
+    background-color: var(--white);
+}
+
+.faq-answer p {
+    padding: 20px 0;
+    color: var(--gray);
+}
+
+/* Footer (identique aux autres pages) */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+}
+
+.social-links li {
+    margin-right: 15px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #3a4b5c;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* Style pour le dropdown utilisateur */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.user-icon.connected {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.user-icon.disconnected {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.user-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.user-dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Quantity Section */
+.quantity-section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 0.9rem;
+}
+
+.quantity-section input {
+    margin-top: 5px;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-column {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .station-card {
+        flex-direction: column;
+    }
+
+    .station-distance {
+        margin-top: 15px;
+        text-align: left;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categorie-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .search-box button {
+        border-radius: 5px;
+        width: 100%;
+    }
+}
